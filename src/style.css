@@ -1,0 +1,44 @@
+.App {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  height: 50%;
+}
+
+.temp-options {
+  display: flex;
+  justify-content: space-around;
+  width: 500px;
+  /* background-color: blue; */
+}
+
+.temp:hover {
+  cursor: pointer;
+}
+
+.weather-container {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #efefef;
+  margin-top: 30px;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px 0;
+  height: 150px;
+  width: 120px;
+}
