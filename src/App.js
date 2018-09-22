@@ -21,9 +21,7 @@ class App extends Component {
     this.setState({ zipcode : e.target.value})
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-
+  handleSubmit = () => {
     axios.get(`http://api.aerisapi.com/forecasts/${this.state.zipcode}?client_id=${clientId}&client_secret=${clientSecret}`)
     .then(response => {
       const weatherInfo = response.data.response[0];
@@ -46,10 +44,10 @@ class App extends Component {
       <div className="App">
           <div className="main-section">
             <div className="temp-options">
-              <form onSubmit={this.handleSubmit}>
+              <div>
                 <input type="text" onChange={this.handleChange.bind(this)} placeholder="Enter Your Zipcode" />
-                <button type='submit'>Submit</button>
-              </form>
+                <button onClick={this.handleSubmit}>Submit</button>
+              </div>
               <div>
                 <span onClick={this.handleCTemp} className="temp">C</span> | <span onClick={this.handleFTemp} className="temp">F</span>
               </div>
